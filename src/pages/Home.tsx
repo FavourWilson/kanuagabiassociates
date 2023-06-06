@@ -15,8 +15,8 @@ import { sliderData, sliderDataSingle } from "../data/SliderData";
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 import useManagersFetch from "../customs/useManagersFetch";
 import { managementUrl } from "../utils/urls";
-import { base_url } from "../utils/config";
 import useManagersSlideFetch from "../customs/useManagersSlideFetch";
+import { base_url } from "../utils/urls";
 
 const data1 = detailsContainerData[0];
 const data2 = detailsContainerData[1];

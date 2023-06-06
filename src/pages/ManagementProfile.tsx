@@ -4,9 +4,9 @@ import Footer from "../components/Footer";
 import { useParams } from "react-router-dom";
 import useFetchSingle from "../customs/useFetchSingle";
 import { LawyerUrl, managementUrl } from "../utils/urls";
-import IsLoading from "../components/IsLoading";
-import { base_url } from "../utils/config";
 import useManagersFetch from "../customs/useManagersFetch";
+import IsLoading from "../components/IsLoading";
+import { base_url } from "../utils/urls";
 
 const ManagementProfile = () => {
 	const { id } = useParams();

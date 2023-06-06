@@ -1,5 +1,5 @@
 import React from "react";
-import { base_url } from "../utils/config";
+import { base_url } from "../utils/urls";
 
 const Slider = ({
 	index,

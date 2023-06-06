@@ -9,12 +9,6 @@ import IsLoading from "../components/IsLoading";
 import { LawyerUrl } from "../utils/urls";
 import useFetch from "../customs/useFetch";
 
-import Slider, { SliderSingle } from "../components/Slider";
-import { IoArrowBack, IoArrowForward } from "react-icons/io5";
-import { nextSlide, prevSlide } from "../helpers/SliderFunctions";
-import { sliderData, sliderDataSingle } from "../data/SliderData";
-import { base_url } from "../utils/config";
-
 const Team = () => {
 	const [location, setLocation] = useState<string>("abuja");
 	const [filteredData, setFilteredData] = useState<any>("");

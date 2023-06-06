@@ -1,17 +1,17 @@
-import { base_url } from "../utils/config";
+import { base_url } from "../utils/urls";
 
 const Card = ({
-  img,
-  name,
-  role,
-  id,
+	img,
+	name,
+	role,
+	id,
 }: {
-  img: string;
-  name?: string;
-  role?: string;
-  id: number;
+	img: string;
+	name?: string;
+	role?: string;
+	id: number;
 }) => {
-  return (
+	return (
 		<a
 			href={`/team/${id}`}
 			style={{ textDecoration: "none", color: "#000" }}
@@ -26,12 +26,10 @@ const Card = ({
 				<div className="team__details">
 					<h4 className="team__card-heading">{name}</h4>
 					<p className="team__card-text">{role ? role : "partner"}</p>
-			  </div>
-			  
-			  
+				</div>
 			</div>
 		</a>
-  );
+	);
 };
 
 export default Card;
