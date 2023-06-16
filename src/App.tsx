@@ -20,7 +20,7 @@ import { AdminForm } from "./pages/AdminForm";
 import AdminMain from "./pages/AdminMain";
 import { ManagementForm } from "./pages/ManagementForm";
 import ManagementProfile from "./pages/ManagementProfile";
-
+import NewsForm from "./pages/NewsForm";
 function App() {
 	return (
 		<Router>
@@ -39,6 +39,10 @@ function App() {
 						<Route
 							path="/admin/add-manager"
 							element={<ManagementForm />}
+						/>
+						<Route
+							path="/admin/create-news"
+							element={<NewsForm />}
 						/>
 						<Route
 							path="/admin/createlawyers/edit/:id"

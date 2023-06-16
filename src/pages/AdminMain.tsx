@@ -166,6 +166,16 @@ const AdminMain = () => {
 
 						<li className="admin__nav-li">
 							<a
+								href="/admin/create-news"
+								className="admin__nav-a"
+							>
+								<IoPersonAddOutline className="admin__nav-icon" />
+								Add New Article
+							</a>
+						</li>
+
+						<li className="admin__nav-li">
+							<a
 								href="/admin/createlawyers"
 								className="admin__nav-a"
 							>
