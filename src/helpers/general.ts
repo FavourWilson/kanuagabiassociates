@@ -51,19 +51,28 @@ export const createManager = async (data: any, userAuth: string) => {
 };
 
 export const deleteManager = async (id: String, userAuth: string) => {
-	try {
-		const response = await axios.delete(`${managementUrl}/delete/${id}`, {
-			headers: {
-				authorization: userAuth,
-			},
-		});
+	// try {
+	// 	const response = await axios.delete(`${managementUrl}/delete/${id}`, {
+	// 		headers: {
+	// 			authorization: userAuth,
+	// 		},
+	// 	});
 
-		displaySuccessToast("Deleted successfully");
+	// 	displaySuccessToast("Deleted successfully");
 
-		return response.data.json();
-	} catch (error) {
-		displayErrorToast("Something went wrong");
-	}
+	// 	return response.data.json();
+	// } catch (error) {
+		
+	// 	() => {console.log(error)}
+	// 	displayErrorToast("Something went wrong");
+	// }
+
+	const response = await axios.delete(`${managementUrl}/delete/${id}`, {
+		headers: {
+			authorization: userAuth,
+		},
+	}).then((res) => res.status === 200 ? displaySuccessToast("Deleted successfully") : res.status === 500 && displayErrorToast("Something went wrong"))
+
 };
 
 export const updateManager = async (data: any, userAuth: string, id: string) => {
