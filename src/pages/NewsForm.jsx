@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { CTX } from '../contexts/GlobalContext';
 import { useNavigate, useParams } from "react-router-dom";
+import { createArticle, updateArticle } from '../helpers/general';
 
 const NewsForm = () => {
 
@@ -72,13 +73,13 @@ const [uploadImage, setUploadImage] = useState("");
 		try {
 			setIsLoading(true);
 			if (articleToEdit) {
-				await updateManager(
+				await updateArticle(
 					totalNewContent,
 					userAuth,
 					articleToEdit._id
 				);
 			} else {
-				await createManager(totalNewContent, userAuth);
+				await createArticle(totalNewContent, userAuth);
 			}
 			setIsLoading(false);
 			navigate("/admin/lawfirm/kanu_agabi_dashboard/management");

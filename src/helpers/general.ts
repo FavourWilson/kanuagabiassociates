@@ -95,8 +95,8 @@ export const deleteArticle = async (id: string, userAuth: string) => {
 				authorization: userAuth,
 			}
 		})
-		displaySuccessToast("Deleted Successfully";
-		return response.data.json)
+		displaySuccessToast("Deleted Successfully");
+		return response.data.json
 	} catch (error) {
 		displayErrorToast("Something went wrong");
 	}
