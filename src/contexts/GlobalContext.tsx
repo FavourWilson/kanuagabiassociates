@@ -30,6 +30,7 @@ const GlobalContext = ({ children }: { children: React.ReactNode }) => {
         userAuth,
         logout,
         lawyerToEdit,
+        articleToEdit
         handleLawyerToEdit,
       }}
     >
