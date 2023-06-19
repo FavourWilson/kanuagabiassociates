@@ -45,7 +45,6 @@ const [uploadImage, setUploadImage] = useState("");
 	  const totalNewContent = new FormData();
 	  totalNewContent.append("newsHeader", newsHeader);
 	  totalNewContent.append('entryDate', entryDate);
-	  totalNewContent.append('image', uploadImage);
 	  totalNewContent.append("image", uploadImage);
 	  totalNewContent.append("description", description);
 
