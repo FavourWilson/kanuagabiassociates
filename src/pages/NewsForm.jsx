@@ -2,12 +2,14 @@ import React, { useRef, useState } from 'react'
 import { CTX } from '../contexts/GlobalContext';
 import { useNavigate, useParams } from "react-router-dom";
 import { createArticle, updateArticle } from '../helpers/general';
+import Cookies from "js-cookie";
+import { displayErrorToast } from '../helpers/toast';
 
 const NewsForm = () => {
 
 	const { userAuth } = CTX();
 	const { id } = useParams();
-	const articleToEdit = id && JSON.parse(Cokkies.get("articleToEdit"));
+	const articleToEdit = id && JSON.parse(Cookies.get("articleToEdit"));
 	const [isLoading, setIsLoading] = useState(false);
 	const navigate = useNavigate();
   const [newsContent, setNewsContent] = useState({
