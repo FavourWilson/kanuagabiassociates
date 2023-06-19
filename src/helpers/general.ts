@@ -1,6 +1,6 @@
 import axios from "axios";
 import Cookies from "js-cookie";
-import { LawyerUrl, loginUrl, managementUrl, signupUrl } from "../utils/urls";
+import { LawyerUrl, articleUrl, loginUrl, managementUrl, signupUrl } from "../utils/urls";
 import { displayErrorToast, displaySuccessToast } from "./toast";
 export const getDataByLocation = (location: string, employees: any) => {
 	const data = employees.filter(
@@ -50,30 +50,57 @@ export const createManager = async (data: any, userAuth: string) => {
 	}
 };
 
+export const createArticle = async (data: any, userAuth: string) => {
+	try {
+		await axios.post(articleUrl, data, {
+			headers: {
+				authorization:userAuth
+			}
+		})
+		displaySuccessToast("Articles xreated successfully")
+	} catch (error) {
+		displayErrorToast("Something went wrong")
+	}
+}
+
 export const deleteManager = async (id: String, userAuth: string) => {
-	// try {
-	// 	const response = await axios.delete(`${managementUrl}/delete/${id}`, {
-	// 		headers: {
-	// 			authorization: userAuth,
-	// 		},
-	// 	});
+	try {
+		const response = await axios.delete(`${managementUrl}/delete/${id}`, {
+			headers: {
+				authorization: userAuth,
+			},
+		});
 
-	// 	displaySuccessToast("Deleted successfully");
+		displaySuccessToast("Deleted successfully");
 
-	// 	return response.data.json();
-	// } catch (error) {
+		return response.data.json();
+	} catch (error) {
 		
-	// 	() => {console.log(error)}
-	// 	displayErrorToast("Something went wrong");
-	// }
+		() => {console.log(error)}
+		displayErrorToast("Something went wrong");
+	}
 
-	const response = await axios.delete(`${managementUrl}/delete/${id}`, {
-		headers: {
-			authorization: userAuth,
-		},
-	}).then((res) => res.status === 200 ? displaySuccessToast("Deleted successfully") : res.status === 500 && displayErrorToast("Something went wrong"))
+	// const response = await axios.delete(`${managementUrl}/delete/${id}`, {
+	// 	headers: {
+	// 		authorization: userAuth,
+	// 	},
+	// }).then((res) => res.status === 200 ? displaySuccessToast("Deleted successfully") : res.status === 500 && displayErrorToast("Something went wrong"))
 
 };
+
+export const deleteArticle = async (id: string, userAuth: string) => {
+	try {
+		const response = await axios.delete(`${articleUrl}/delete/${id}`, {
+			headers: {
+				authorization: userAuth,
+			}
+		})
+		displaySuccessToast("Deleted Successfully";
+		return response.data.json)
+	} catch (error) {
+		displayErrorToast("Something went wrong");
+	}
+}
 
 export const updateManager = async (data: any, userAuth: string, id: string) => {
 	try {
@@ -90,6 +117,21 @@ export const updateManager = async (data: any, userAuth: string, id: string) => 
 		console.log(error);
 	}
 };
+
+export const updateArticle = async (data: any, userAuth: string, id: string) => {
+	try {
+		const response = await.patch(`${articleUrl}${id}`, data, {
+			headers: {
+				authorization:userAuth
+			}
+		})
+		displaySuccessToast("Manager updated successfully")
+		return response.data;
+	} catch (error) {
+		displayErrorToast("Something went wrong");
+		console.log(error);
+	}
+}
 
 
 
