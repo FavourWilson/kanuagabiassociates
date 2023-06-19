@@ -53,7 +53,7 @@ const News = () => {
       ) : (
           <div className="admin__empty">
 							<p className="admin__empty-text">
-								There are no management to display............
+								There are News to display............
 							</p>
 						</div>
       )}
