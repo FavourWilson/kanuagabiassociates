@@ -120,7 +120,7 @@ export const updateManager = async (data: any, userAuth: string, id: string) => 
 
 export const updateArticle = async (data: any, userAuth: string, id: string) => {
 	try {
-		const response = await.patch(`${articleUrl}${id}`, data, {
+		const response = await axios.patch(`${articleUrl}${id}`, data, {
 			headers: {
 				authorization:userAuth
 			}
